@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.onload = function () {
+        let shopCar = (function () {
+            let instance
+            function init() {
+                return {
+                    add: function (food) {
+                        this.list.push(food)
+                    },
+                    list: []
+                }
+            }
+
+            return {
+                instance: function () {
+                    if (!instance) {
+                        instance = init()
+                    }
+                    return instance
+                }
+            }
+        })()
+
+        var shop = shopCar.instance()
+        var shop2 = shopCar.instance()
+        shop.add('苹果')
+        shop2.add('雪梨')
+        console.log(shop.list)
+        console.log(shop2.list)
+        console.log(shop === shop2)
+    }
+</script>
+
+</html>

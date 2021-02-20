@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   function Dog(name){
+       this.name = name
+       this.species = '犬科'
+   }
+   Dog.prototype = {
+       sound: 'wawawa'
+   }
+   var dogA = new Dog('小狗')
+   var dogB = new Dog('大狗')
+//    dogA.prototype.species = '狗科'
+// 定义在构造函数里面的属性，在各实例对象中不共享
+   dogA.species = '卷毛类'
+   console.log(dogA.species)
+   console.log(dogB.species)
+   //定义在构造函数的prototype属性里面的属性，在各实例对象共享(实例对象通过__proto__来访问原型对象)
+//    dogA.sound = 'hu wa hu wa wawawa'
+   dogA.__proto__.sound = 'hu wa hu wa wawawa'
+   console.log(dogA.sound)
+   console.log(dogA.sound)
+</script>
+</html>

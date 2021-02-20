@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let obj = {
+        name: '风儿'
+    }
+    function fn(a,b,c){
+        console.log(a,b,c,this.name)
+    }
+    // fn.call(obj)
+    Function.prototype.call_ = function(obj){
+        obj.fn = this
+        let list = []
+        for(let i = 1; i<arguments.length; i++){
+            list.push(arguments[i])
+        }
+        console.log(list)
+        debugger
+        eval('obj.fn('+list+')')
+        delete obj.fn
+    }
+    fn.call_(obj,'我的','名字','是')
+</script>
+</html>

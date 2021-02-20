@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="col">
+            <span class="item"></span>
+            <span class="item"></span>
+        </div>
+        <div class="col">
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+        </div>
+        <div class="col col3">
+            <span class="item item3"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item item4">4</span>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #999;
+    }
+
+    .col {
+        display: flex;
+        margin: 10px;
+        padding: 2px;
+    }
+.col3 {
+    flex: 0 0 33.3333%;
+}
+    .item {
+        flex: 1;
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid goldenrod;
+        border-radius: 15px;
+    }
+    .item3 {
+        flex: 300px;
+    }
+    .item4 {
+        order: -1;/*排序，默认0，越小越前*/
+        flex-grow: 3;/*放大比例*/
+        text-align: center;
+    }
+
+</style>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function getSum() {
+        let total = 0
+        var arr = [].slice.call(arguments)
+        var sum = function () {
+            var list = [].slice.call(arguments)
+            list.forEach(item => {
+                total = total + item
+            })
+            return sum
+        }
+        sum.toString = function(){
+            return total
+        }
+        return sum(...arr)
+    }
+    let a = getSum(2, 3)(3,4)(33,44) + 7
+    console.log(a)
+</script>
+
+</html>

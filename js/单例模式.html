@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.onload = function () {
+        var ShopCar = (function () {
+            var instance = init();
+            function init() {
+                /*这里定义单例代码*/
+                return {
+                    buy(good) {
+                        this.goods.push(good);
+                    },
+                    goods: [],
+                };
+            }
+            return {
+                getInstance: function () {
+                    return instance;
+                },
+            };
+        })();
+        let car1 = ShopCar.getInstance();
+        let car2 = ShopCar.getInstance();
+        car1.buy('橘子');
+        car2.buy('苹果'); //[ '橘子', '苹果' ]console.log(car1.goods);console.log(car1 === car2); // true
+    }
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Animal(name) {
+        this.name = name
+    }
+    Animal.prototype = {
+        species: 'sound'
+    }
+    var dog = new Animal('狗')
+    var cat = new Animal('猫')
+
+    dog.name = '小狗'
+    console.log(dog.species)
+    dog.__proto__.species = 'look'
+    console.log(dog.name)
+    console.log(cat.name)
+    console.log(dog.species)
+    console.log(cat.species)
+</script>
+
+</html>

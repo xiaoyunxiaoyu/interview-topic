@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.onload = function () {
+        let a = (function () {
+            let b = init()
+            function init() {
+                return {
+                    add: function (fulit) {
+                        this.list.push(fulit)
+                    },
+                    list: []
+                }
+            }
+            return {
+                b: function () {
+                    return b
+                }
+            }
+        })()
+        let c = a.b()
+        let d = a.b()
+        c.add('苹果')
+        d.add('凤梨')
+        console.log(c.list)
+        console.log(c)
+    }
+</script>
+
+</html>
